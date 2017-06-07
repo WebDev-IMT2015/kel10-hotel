@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container"> 
-{{ Form::text('date', '', array('id' => 'datepicker') }}
     <div class="row text-center">
+    <p>Date: <input type="text" id="datepicker"></p>
         <table class="table table-bordered">
             <tr>
                 <td id="id1">
