@@ -78,5 +78,15 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+
+    <script>
+        $(function() {
+            $('div#trigger').hover(function() {
+                $('div#popup').show();
+            }, function() {
+                $('div#popup').hide();
+            });
+        });
+    </script>
 </body>
 </html>
