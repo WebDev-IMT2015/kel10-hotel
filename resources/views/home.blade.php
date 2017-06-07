@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container"> 
+{{ Form::text('date', '', array('id' => 'datepicker') }}
     <div class="row text-center">
         <table class="table table-bordered">
             <tr>
