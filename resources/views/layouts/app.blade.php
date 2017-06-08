@@ -53,7 +53,6 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
                         @else
                             @if(Auth::user()->authentication == 1)
                             <li class="dropdown">
@@ -75,6 +74,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="{{ route('register') }}">Users</a></li>
                             @else
                             <!-- Jika Bukan Admin -->
                             <p>Bubudesuwa</p>
