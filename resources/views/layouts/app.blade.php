@@ -103,7 +103,7 @@
 
         $(".close").click(function(){
             $("#myModal").hide();
-            $("div").removeClass("selected");
+            $(".td").removeClass("selected");
         });
     </script>
 </body>
