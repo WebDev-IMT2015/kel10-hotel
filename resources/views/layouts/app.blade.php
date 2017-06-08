@@ -97,10 +97,12 @@
     <script>
         $(document).ready(function() 
         {
-            $('#datePicker').datepicker({
+            $('#datePicker').datepicker(
+            {
                 autoclose: true,
                 format: 'mm/dd/yyyy'
             });
+            $('#datePicker').datepicker('setDate', new Date());
         });
 
         $(".td").click(function(){
