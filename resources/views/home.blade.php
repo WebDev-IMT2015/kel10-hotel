@@ -17,10 +17,10 @@
         <table class="table table-bordered">
             <tr>
                 <td class="id1">
-                    <div class="td" id="1">101</div>
+                    <div class="td">101</div>
                 </td>
                 <td class="id1">
-                    <div class="td" id="2">102</div>
+                    <div class="td">102</div>
                 </td>
                 <td class="id1">
                     <div class="td">103</div>

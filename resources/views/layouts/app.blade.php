@@ -74,7 +74,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('register') }}">Users</a></li>
+                            <li><a href="{{ url('register') }}">Users</a></li>
                             @else
                             <!-- Jika Bukan Admin -->
                             <p>Bubudesuwa</p>
@@ -108,7 +108,13 @@
         $(".td").click(function(){
             $("#myModal").show();
             var txt="";
+            // var i=0;
             $(this).toggleClass('selected');
+            // $(".td").each(function(){
+            //     if($(".td").hasClass("selected"))
+            //         txt = i;
+            //     i++;
+            // });
             $(".selected").each(function(){
                 txt = $(".selected").text();
             });

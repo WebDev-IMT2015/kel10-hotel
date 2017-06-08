@@ -17,7 +17,7 @@ class Room extends Migration
             $table->increments('id');
             $table->string('no_kamar');
             $table->string('type');
-            $table->string('harga');
+            $table->integer('harga');
             $table->string('status');
         });
     }
