@@ -13,7 +13,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -80,21 +83,27 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 
-      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
-
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script>
-        $(function() {
-            $('div#trigger').hover(function() {
-                $('div#popup').show();
-            }, function() {
-                $('div#popup').hide();
+        $(function()
+        {
+            $( "#datepicker" ).datepicker();
+        });
+
+        $(".td").click(function(){
+            $("#myModal").show();
+            var txt="";
+            $(this).toggleClass('selected');
+            $(".selected").each(function(){
+                txt = $(".selected").text();
             });
+            $("#nomor").html(txt);
+        });
+
+        $(".close").click(function(){
+            $("#myModal").hide();
+            $("div").removeClass("selected");
         });
     </script>
 </body>
