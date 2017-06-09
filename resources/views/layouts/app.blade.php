@@ -108,15 +108,13 @@
         $(".td").click(function(){
             $("#myModal").show();
             var txt="";
-            // var i=0;
             $(this).toggleClass('selected');
-            // $(".td").each(function(){
-            //     if($(".td").hasClass("selected"))
-            //         txt = i;
-            //     i++;
-            // });
             $(".selected").each(function(){
                 txt = $(".selected").text();
+                @foreach($mains as $main)
+                    if({{ $main->no_kamar }} == txt)
+                        txt="<p>No Kamar : {{ $main->no_kamar }}<br>Tipe : {{ $main->type }}<br>Harga: {{ $main->harga }}</p>";
+                @endforeach
             });
             $("#nomor").html(txt);
         });

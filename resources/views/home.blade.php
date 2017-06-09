@@ -15,7 +15,18 @@
         <br>
         <br>
         <table class="table table-bordered">
+        <!-- bikin For -->
+        {{-- @for($i=0; $i<3; $i++)
             <tr>
+            @for($j=0; $j<5; $j++)
+                <td class="id1">
+                    <div class="td">test</div>
+                </td>
+            @endfor
+            </tr>
+        @endfor --}}
+
+            <!-- <tr>
                 <td class="id1">
                     <div class="td">101</div>
                 </td>
@@ -65,7 +76,7 @@
                 <td class="id3">
                     <div class="td">test</div>
                 </td>
-            </tr>
+            </tr> -->
         </table>
         <!-- The Modal -->
         <div id="myModal" class="modal">

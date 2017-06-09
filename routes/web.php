@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'MainController@index');
 
 Route::get('login', function () {
     return view('login');
@@ -24,7 +24,7 @@ Route::get('register', 'RegisterController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('main', 'MainController@index');
 
 
 // Route::get('auth/register', [
