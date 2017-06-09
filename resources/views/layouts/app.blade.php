@@ -74,10 +74,28 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('register') }}">Users</a></li>
+                            <li><a href="{{ url('registerUser') }}">Add CS</a></li>
                             @else
                             <!-- Jika Bukan Admin -->
-                            <p>Bubudesuwa</p>
+                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    CS {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
                             @endif
                         @endif
                     </ul>
@@ -104,25 +122,27 @@
             });
             $('#datePicker').datepicker('setDate', new Date());
 
-            $(".td").click(function(){
+ {{--
+        $(".td").click(function(){
             $("#myModal").show();
             var txt="";
             $(this).toggleClass('selected');
-            {{--$(".selected").each(function(){
+            $(".selected").each(function(){
                 txt = $(".selected").text();
                 @foreach($mains as $main)
                     if({{ $main->no_kamar }} == txt)
                         txt="<p>No Kamar : {{ $main->no_kamar }}<br>Tipe : {{ $main->type }}<br>Harga: {{ $main->harga }}</p>";
                 @endforeach
-            });--}}
-            $("#nomor").html(txt);
             });
+            $("#nomor").html(txt);
 
+        });
+--}}
             $(".close").click(function(){
                 $("#myModal").hide();
                 $(".td").removeClass("selected");
             });
-        });
+        }
     </script>
 </body>
 </html>
