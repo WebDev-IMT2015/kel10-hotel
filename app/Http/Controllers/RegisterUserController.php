@@ -25,7 +25,7 @@ class RegisterUserController extends Controller
 		$registerUser->password=$cyptpassword;
 		$registerUser->authentication='0';
 		$registerUser->save();
-		return redirect('registerUser');
+		return redirect('/');
 	}
    
 }
