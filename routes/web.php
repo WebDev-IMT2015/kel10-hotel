@@ -26,6 +26,11 @@ Auth::routes();
 
 Route::get('main', 'MainController@index');
 
+Route::get('registerUser','RegisterUserController@index');
+
+Route::post('registerUser','RegisterUserController@create');
+
+
 
 // Route::get('auth/register', [
 //   'as' => 'register', 

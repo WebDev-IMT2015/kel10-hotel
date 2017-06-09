@@ -74,7 +74,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('register') }}">Users</a></li>
+                            <li><a href="{{ url('registerUser') }}">Users</a></li>
                             @else
                             <!-- Jika Bukan Admin -->
                             <p>Bubudesuwa</p>
@@ -104,7 +104,7 @@
             });
             $('#datePicker').datepicker('setDate', new Date());
         });
-
+ {{--
         $(".td").click(function(){
             $("#myModal").show();
             var txt="";
@@ -118,7 +118,7 @@
             });
             $("#nomor").html(txt);
         });
-
+--}}
         $(".close").click(function(){
             $("#myModal").hide();
             $(".td").removeClass("selected");
