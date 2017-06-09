@@ -65,6 +65,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Add CS
                                 </button>
+                                <button type="submit" class="btn btn-warning">
+                                 CS List
+                                </button>
                             </div>
                         </div>
                     </form>
