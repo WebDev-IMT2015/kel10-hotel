@@ -48,45 +48,6 @@
                 <p id="nomor"></p>
             </div>
         </div>
-
-        <!-- <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
-
-{{-- <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
-
-<script>
-$(document).ready(function() 
-{
-    $(".td").click(function(){
-        $("#myModal").show();
-        var txt="";
-        $(this).toggleClass('selected');
-        $(".selected").each(function(){
-            txt = $(".selected").text();
-            @foreach($mains as $main)
-                if({{ $main->no_kamar }} == txt)
-                    txt="<p>No Kamar : {{ $main->no_kamar }}<br>Tipe : {{ $main->type }}<br>Harga: {{ $main->harga }}</p>";
-            @endforeach
-        });
-        $("#nomor").html(txt);
-    });
-
-    $(".close").click(function(){
-        $("#myModal").hide();
-        $(".td").removeClass("selected");
-    });
-});
-</script> --}}
 @endsection

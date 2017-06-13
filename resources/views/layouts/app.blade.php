@@ -15,11 +15,12 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
 <body>
@@ -121,7 +122,8 @@
                 format: 'mm/dd/yyyy'
             });
             $('#datePicker').datepicker('setDate', new Date());
- {{--
+
+            @if (!Auth::guest())
             $(".td").click(function(){
                 $("#myModal").show();
                 var txt="";
@@ -135,12 +137,14 @@
                 });
                 $("#nomor").html(txt);
             });
---}}
+            @endif
+            
             $(".close").click(function(){
                 $("#myModal").hide();
                 $(".td").removeClass("selected");
             });
         }
     </script>
+    
 </body>
 </html>
