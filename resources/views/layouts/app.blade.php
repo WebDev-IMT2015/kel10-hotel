@@ -122,7 +122,7 @@
             });
             $('#datePicker').datepicker('setDate', new Date());
 
-            @if(!Auth::guest())
+            @if(!Auth::guest() && Route::current()->getName() == 'main')
             $(".td").click(function(){
                 $("#myModal").show();
                 var txt="";
