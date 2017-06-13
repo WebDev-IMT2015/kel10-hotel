@@ -121,7 +121,7 @@
                 format: 'mm/dd/yyyy'
             });
             $('#datePicker').datepicker('setDate', new Date());
- {{--
+            @if(!Auth::guest())
             $(".td").click(function(){
                 $("#myModal").show();
                 var txt="";
@@ -135,7 +135,7 @@
                 });
                 $("#nomor").html(txt);
             });
---}}
+            @endif
             $(".close").click(function(){
                 $("#myModal").hide();
                 $(".td").removeClass("selected");
