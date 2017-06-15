@@ -15,29 +15,20 @@
         <br>
         <br>
         <table class="table table-bordered">
-        <!-- bikin For -->
-        <?php $i=0; ?>
-        @foreach($mains as $main)
-            @if($i==0)
-                <tr>
-            @endif
-            @if($i<5)
-                @if($main->type == 'reguler')
-                <td class="id1">
-                @elseif($main->type == 'delux')
-                <td class="id2">
-                @else
-                <td class="id3">
-                @endif
-                    <div class="td">{{ $main->no_kamar }}</div>
-                </td>
-                <?php $i++; ?>
-            @endif
-            @if($i==5)
-                </tr>
-                <?php $i=0; ?>
-            @endif
-        @endforeach
+            <tr>
+                <th class="text-center">No Kamar</th>
+                <th class="text-center">Tipe</th>
+                <th class="text-center">Harga</th>
+                <th class="text-center">Status</th>
+            </tr>
+            @foreach($mains as $main)
+            <tr>
+                <td>{{ $main->no_kamar }}</td>
+                <td>{{ $main->type }}</td>
+                <td>{{ $main->harga }}</td>
+                <td>{{ $main->status }}</td>
+            </tr>
+            @endforeach
         </table>
 
         <!-- The Modal -->
