@@ -30,7 +30,7 @@ Route::get('registerUser','RegisterUserController@index');
 
 Route::post('registerUser','RegisterUserController@create');
 
-
+Route::get('/logout', 'Auth\LoginController@logout');
 
 // Route::get('auth/register', [
 //   'as' => 'register', 
