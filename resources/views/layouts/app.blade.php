@@ -121,7 +121,8 @@
                 format: 'mm/dd/yyyy'
             });
             $('#datePicker').datepicker('setDate', new Date());
-            @if(!Auth::guest() || )
+
+            @if(!Auth::guest() && Route::current()->getName() == 'main' )
             $(".td").click(function(){
                 $("#myModal").show();
                 var txt="";
@@ -136,6 +137,7 @@
                 $("#nomor").html(txt);
             });
             @endif
+            
             $(".close").click(function(){
                 $("#myModal").hide();
                 $(".td").removeClass("selected");
