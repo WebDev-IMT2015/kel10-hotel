@@ -5,7 +5,7 @@
     <div class="row text-center">
         <div class="form-group">
             <div class='input-group date' id='datePicker'>
-                <input type='text' class="form-control" />
+                <input type='text' class="form-control" value="<?php echo date('Y-m-d'); ?>" />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -14,7 +14,7 @@
         <br>
         <br>
         <br>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <tr>
                 <th class="text-center">No Kamar</th>
                 <th class="text-center">Tipe</th>

@@ -121,7 +121,7 @@
                 format: 'mm/dd/yyyy'
             });
             $('#datePicker').datepicker('setDate', new Date());
-            @if(!Auth::guest())
+            @if(!Auth::guest() || )
             $(".td").click(function(){
                 $("#myModal").show();
                 var txt="";
