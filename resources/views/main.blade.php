@@ -5,7 +5,7 @@
     <div class="row text-center">
         <div class="form-group">
             <div class='input-group date' id='datePicker'>
-                <input type='text' class="form-control" />
+                <input type='text' class="form-control" value=<?php echo date('Y-m-d'); ?>>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -14,6 +14,12 @@
         <br>
         <br>
         <br>
+        @foreach($bookings as $booking)
+        <p>{{ $booking->id_kamar }}</p>
+        <p>{{ $booking->namaCustomer }}</p>
+        <p>{{ $booking->checkIn }}</p>
+        <p>{{ $booking->checkOut }}</p>
+        @endforeach
         <table class="table table-bordered">
         <!-- bikin For -->
         <?php $i=0; ?>

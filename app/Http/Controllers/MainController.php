@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Main;
+use App\Booking;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class MainController extends Controller
     	else
     	{
 	    	$main = Main::all();
-	    	return view('main')->with('mains', $main);
+            $booking = Booking::all();
+	    	return view('main')->with('mains', $main)->with('bookings', $booking);
     	}
     }
 }
