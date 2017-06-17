@@ -16,7 +16,6 @@ class Booking extends Migration
         Schema::create('booking', function (Blueprint $table) {
             $table->increments('id');
             $table->string('id_kamar');
-            $table->string('namaCustomer');
             $table->Date('checkIn');
             $table->Date('checkOut');
             $table->string('namaDepan');
