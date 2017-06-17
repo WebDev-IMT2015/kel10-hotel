@@ -16,12 +16,8 @@
         <form class="form-inline">
             <div class="form-group" method='POST' action='main'>
                 <div class='input-group date' id='datePicker'>
-<<<<<<< HEAD
-                    <p>Date: <input type="text" id="datepicker"></p>                    <span class="input-group-addon">
-=======
-                    <input name='date' type='text' class="form-control" value="<?php if(!isset($_GET['date']))echo date('Y-m-d'); else echo $_GET['date']; ?>" />
+                    <input name='date' type='text' class="form-control" id="datepicker" value="<?php if(!isset($_GET['date']))echo date('Y-m-d'); else echo $_GET['date']; ?>" />
                     <span class="input-group-addon">
->>>>>>> 0a1ce8122a223c05603b7123894c5738b002e2a3
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
