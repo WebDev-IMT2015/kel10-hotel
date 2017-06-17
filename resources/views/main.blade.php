@@ -16,8 +16,7 @@
         <form class="form-inline">
             <div class="form-group" method='POST' action='main'>
                 <div class='input-group date' id='datePicker'>
-                    <input name='date' type='text' class="form-control" value="<?php echo date('Y-m-d'); ?>" />
-                    <span class="input-group-addon">
+                    <p>Date: <input type="text" id="datepicker"></p>                    <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
