@@ -19,6 +19,11 @@ class Booking extends Migration
             $table->string('namaCustomer');
             $table->Date('checkIn');
             $table->Date('checkOut');
+            $table->string('namaDepan');
+            $table->string('namaBelakang');
+            $table->string('email');
+            $table->string('no_telp');
+            $table->string('ntt');
         });
     }
 
