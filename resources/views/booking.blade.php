@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Booking Room</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('main') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('namaDepan') ? ' has-error' : '' }}">
@@ -25,10 +25,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('namaBelakang') ? ' has-error' : '' }}">
-                            <label for="Nama Belakang" class="col-md-4 control-label">Nama Belakang</label>
+                            <label for="namaBelakang" class="col-md-4 control-label">Nama Belakang</label>
 
                             <div class="col-md-6">
-                                <input id="NamaBelakang" type="text" class="form-control" name="NamaBelakang" required>
+                                <input id="namaBelakang" type="text" class="form-control" name="namaBelakang" required>
 
                                 @if ($errors->has('namaBelakang'))
                                     <span class="help-block">

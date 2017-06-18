@@ -30,6 +30,8 @@ Route::get('registerUser','RegisterUserController@index');
 
 Route::post('registerUser','RegisterUserController@create');
 
+Route::post('main','MainController@create');
+
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('booking', function () {

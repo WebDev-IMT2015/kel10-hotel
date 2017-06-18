@@ -14,4 +14,27 @@ class MainController extends Controller
     	$booking = Booking::all();
     	return view('main')->with('mains', $main)->with('bookings', $booking);
     }
+
+  public function create(Request $request)
+	{
+		$namaDepan = $request->input('namaDepan');
+		$namaBelakang = $request->input('namaBelakang');
+		$email = $request->input('email');
+		$noTelp = $request->input('noTelp');
+		$negaraAsal = $request->input('negaraAsal');
+		$jenisKamar = $request->input('jenisKamar');
+		$checkIn = $request->input('checkIn');
+		$checkOut = $request->input('checkOut');
+
+		$bookingRoom= new Booking;
+		$bookingRoom->checkIn=$checkIn;
+		$bookingRoom->checkOut=$checkOut;
+		$bookingRoom->namaDepan=$namaDepan;
+		$bookingRoom->namaBelakang=$namaBelakang;
+		$bookingRoom->email=$email;
+		$bookingRoom->no_telp=$noTelp;
+		$bookingRoom->ntt=$negaraAsal;
+		$bookingRoom->save();
+		return redirect('/');
+	}
 }
