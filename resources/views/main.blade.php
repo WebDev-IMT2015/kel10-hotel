@@ -48,7 +48,6 @@
                 @if($check=='1')
                 <td>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>">Detail Info</button>
-                    <button class="btn btn-warning">Print</button>
                 </td>
                 @else
                 <td><a class="btn btn-primary" href="{{ url('booking') }}?id={{ $main->id }}&date=<?php echo $date; ?>">Booking Kamar</a></td>
@@ -74,6 +73,7 @@
                 <h4 id="wn"></h4>
             </div>
             <div class="modal-footer">
+                <button type='button' class="btn btn-primary">Print</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
