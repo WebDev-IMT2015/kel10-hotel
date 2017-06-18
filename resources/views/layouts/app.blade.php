@@ -121,10 +121,11 @@
     });
   </script>
 
-  <script>
-function myFunction() {
-    window.print();
-}
-</script>
+    <script>
+    $('#print').click(function(){
+        window.print();
+        $('#print').hide();
+    });
+    </script>
 </body>
 </html>

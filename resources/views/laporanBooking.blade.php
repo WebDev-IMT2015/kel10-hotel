@@ -4,7 +4,7 @@
 <div class="container"> 
     <div class="row text-center">
 
-<button onclick="myFunction()">Print this page</button>
+<button id="print">Print this page</button>
         <table class="table table-bordered table-hover">
             <tr>
                 <th class="text-center">No Kamar</th>
