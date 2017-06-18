@@ -34,15 +34,25 @@ class MainController extends Controller
 		$checkIn = $request->input('checkIn');
 		$checkOut = $request->input('checkOut');
 
-		$bookingRoom= new Booking;
-		$bookingRoom->checkIn=$checkIn;
-		$bookingRoom->checkOut=$checkOut;
-		$bookingRoom->namaDepan=$namaDepan;
-		$bookingRoom->namaBelakang=$namaBelakang;
-		$bookingRoom->email=$email;
-		$bookingRoom->no_telp=$noTelp;
-		$bookingRoom->ntt=$negaraAsal;
-		$bookingRoom->save();
-		return redirect('/');
+		$main = DB::table('room')->where('type', '=', $jenisKamar);
+		$booking = Booking::all();
+
+		@foreach($main as $room)
+			@foreach($booking as $book)
+				@if($book->id_kamar!=$room->id && $book->checkIn>$checkIn && $book->checkOut<$checkOut)
+				$bookingRoom= new Booking;
+				$bookingRoom->id_kamar=$main->$id;
+				$bookingRoom->checkIn=$checkIn;
+				$bookingRoom->checkOut=$checkOut;
+				$bookingRoom->namaDepan=$namaDepan;
+				$bookingRoom->namaBelakang=$namaBelakang;
+				$bookingRoom->email=$email;
+				$bookingRoom->no_telp=$noTelp;
+				$bookingRoom->ntt=$negaraAsal;
+				$bookingRoom->save();
+				return redirect('/');
+				@endif
+			@endforeach
+		@endforeach
 	}
 }
