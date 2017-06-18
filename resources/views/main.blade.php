@@ -23,36 +23,36 @@
                 <th class="text-center">Info Pemesan</th>
             </tr>
             @foreach($mains as $main)
-            <?php $check='0'; $date=date('Y-m-d');?>
-            {{-- '2017-05-17' ambil dari value input date --}}
-            @foreach($bookings as $booking)
-                @if(isset($_GET['date']))
-                    <?php $date = $_GET['date'];?>
-                    @if($main->id == $booking->id_kamar && $booking->checkIn<=$_GET['date'] && $booking->checkOut>=$_GET['date'])
-                        <?php $check='1'; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; ?>
+                <?php $check='0'; $date=date('Y-m-d');?>
+                {{-- '2017-05-17' ambil dari value input date --}}
+                @foreach($bookings as $booking)
+                    @if(isset($_GET['date']))
+                        <?php $date = $_GET['date'];?>
+                        @if($main->id == $booking->id_kamar && $booking->checkIn<=$_GET['date'] && $booking->checkOut>=$_GET['date'])
+                            <?php $check='1';$id=$booking->id; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; $checkIn=$booking->checkIn; $checkOut=$booking->checkOut; $noKamar=$main->no_kamar; $type=$main->type; $harga=$main->harga; ?>
+                        @endif
+                    @else
+                        @if($main->id == $booking->id_kamar && $booking->checkIn<=$date && $booking->checkOut>=$date)
+                            <?php $check='1';$id=$booking->id; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; $checkIn=$booking->checkIn; $checkOut=$booking->checkOut; $noKamar=$main->no_kamar; $type=$main->type; $harga=$main->harga; ?>
+                        @endif
                     @endif
-                @else
-                    @if($main->id == $booking->id_kamar && $booking->checkIn<=$date && $booking->checkOut>=$date)
-                        <?php $check='1'; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; ?>
-                    @endif
-                @endif
-            @endforeach
-            @if($check=='1')
-                <tr style="background-color: #bdc3c7;">
-            @else
-                <tr>
-            @endif
-                <td>{{ $main->no_kamar }}</td>
-                <td>{{ $main->type }}</td>
-                <td>{{ $main->harga }}</td>
+                @endforeach
                 @if($check=='1')
-                <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>">Detail Info</button>
-                </td>
+                    <tr style="background-color: #bdc3c7;">
                 @else
-                <td><a class="btn btn-primary" href="{{ url('booking') }}?id={{ $main->id }}&date=<?php echo $date; ?>">Booking Kamar</a></td>
+                    <tr>
                 @endif
-            </tr>
+                    <td>{{ $main->no_kamar }}</td>
+                    <td>{{ $main->type }}</td>
+                    <td>{{ $main->harga }}</td>
+                    @if($check=='1') 
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?php echo $id;?>" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>" data-check_in="<?php echo $checkIn;?>" data-check_out="<?php echo $checkOut;?>" data-no_kamar="<?php echo $noKamar;?>" data-type="<?php echo $type;?>" data-harga="<?php echo $harga;?>">Detail Info</button>
+                    </td>
+                    @else
+                    <td><a class="btn btn-primary" href="{{ url('booking') }}?id={{ $main->id }}&date=<?php echo $date; ?>">Booking Kamar</a></td>
+                    @endif
+                </tr>
             @endforeach
         </table>
     </div>
@@ -67,13 +67,18 @@
                 <h2 class="modal-title" id="exampleModalLabel">Info Pemesan</h2>
             </div>
             <div class="modal-body">
-                <h4 id="nama"></h4>
-                <h4 id="email"></h4>
-                <h4 id="noTelp"></h4>
-                <h4 id="wn"></h4>
+                <h4 id="nama">Nama Pemesan : </h4>
+                <h4 id="email">Email : </h4>
+                <h4 id="noTelp">No Telp : </h4>
+                <h4 id="wn">Warga Negara : </h4>
+                <h4 id="type">Tipe : </h4>
+                <h4 id="checkIn">Check In : </h4>
+                <h4 id="checkOut">Check Out : </h4>
+                <h4 id="lamaMenginap">Lama Menginap : </h4>
+                <h4 id="harga">Total harga : Rp. </h4>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id='print'">Print</button>
+                <a id="edit"></a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
