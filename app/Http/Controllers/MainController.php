@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Main;
 use App\Booking;
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ class MainController extends Controller
     	return view('main')->with('mains', $main)->with('bookings', $booking);
     }
 
+<<<<<<< HEAD
   public function create(Request $request)
 	{
 		$namaDepan = $request->input('namaDepan');
@@ -37,4 +39,12 @@ class MainController extends Controller
 		$bookingRoom->save();
 		return redirect('/');
 	}
+=======
+    public function indexLaporan()
+    {
+    	$main = Main::all();
+    	$booking = DB::table('booking')->orderBy('checkIn', 'desc')->get();
+        return view('laporanBooking')->with('mains', $main)->with('bookings', $booking);
+    }
+>>>>>>> 112a3b45905438be98f4b84debd67d272e027cfe
 }

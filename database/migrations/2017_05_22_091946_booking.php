@@ -23,6 +23,7 @@ class Booking extends Migration
             $table->string('email');
             $table->string('no_telp');
             $table->string('ntt');
+            $table->timestamps();
         });
     }
 
