@@ -6,7 +6,7 @@
         <form class="form-inline" method='GET' action='main'>
             <div class="form-group">
                 <div class='input-group date'>
-                    <input name='date' type='text' class="form-control" id="datepicker" value="<?php if(!isset($_GET['date']))echo date('Y-m-d'); else echo $_GET['date']; ?>" />
+                    <input name='date' type='text' class="form-control" id="datepicker" value="<?php if(!isset($_GET['date'])) echo date('Y-m-d'); else echo $_GET['date']; ?>" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -23,7 +23,7 @@
                 <th class="text-center">Info Pemesan</th>
             </tr>
             @foreach($mains as $main)
-            <?php $check='0'; ?>
+            <?php $check='0'; $date=date('Y-m-d');?>
             {{-- '2017-05-17' ambil dari value input date --}}
             @foreach($bookings as $booking)
                 @if(isset($_GET['date']))
@@ -32,7 +32,6 @@
                         <?php $check='1'; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; ?>
                     @endif
                 @else
-                    <?php $date = date('Y-m-d');?>
                     @if($main->id == $booking->id_kamar && $booking->checkIn<=$date && $booking->checkOut>=$date)
                         <?php $check='1'; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; ?>
                     @endif
@@ -60,6 +59,7 @@
     </div>
 </div>
 
+{{-- Modal --}}
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
