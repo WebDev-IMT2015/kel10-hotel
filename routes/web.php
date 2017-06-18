@@ -32,6 +32,8 @@ Route::post('registerUser','RegisterUserController@create');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
+Route::get('laporanBooking', 'MainController@indexLaporan');
+
 // Route::get('auth/register', [
 //   'as' => 'register', 
 //   'uses' => 'Auth\AuthController@getRegister'

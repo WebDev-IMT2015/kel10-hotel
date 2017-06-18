@@ -51,8 +51,8 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @else
                             @if(Auth::user()->authentication == 1)
-                                <li><a href="{{ url('registerUser') }}">Add CS</a></li>
-                                <li><a href="">Laporan Booking</a></li>
+                                <li><a href="{{ url('registerUser') }}">Manage CS</a></li>
+                                <li><a href="{{ url('laporanBooking') }}">Laporan Booking</a></li>
                             @else
                                 <li><a href="">Booking Kamar</a></li>
                             @endif
@@ -90,12 +90,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script>
-    $( function() {
-        $( "#datepicker" ).datepicker(
+    $(function () {
+        $('#datepicker').datepicker(
         {
             dateFormat: 'yy-mm-dd',
         });
     });
+
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var nama = button.data('nama')
+        var email = button.data('email')
+        var no_telp = button.data('no_telp')
+        var wn = button.data('wn') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('#nama').text("Nama Pemesan : "+nama)
+        modal.find('#email').text("Email : "+email)
+        modal.find('#noTelp').text("No Telp : "+no_telp)
+        modal.find('#wn').text("Warga Negara : "+wn)
+    })
   </script>
 </body>
 </html>
