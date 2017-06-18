@@ -66,9 +66,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Add CS
                                 </button>
-                                <button type="submit" class="btn btn-warning">
+                                <a href= "{{url('csList')}}" class="btn btn-warning">
                                  CS List
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </form>

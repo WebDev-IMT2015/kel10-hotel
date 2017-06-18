@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Main;
 use App\Booking;
+use App\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -22,6 +23,12 @@ class MainController extends Controller
     	$booking = DB::table('booking')->orderBy('checkIn', 'desc')->get();
         return view('laporanBooking')->with('mains', $main)->with('bookings', $booking);
     }
+    
+    public function indexCs()
+    {
+    	$user = User::all();
+    	return view('csList')->with('csList', $user);
+    }
 
   	public function create(Request $request)
 	{
@@ -37,22 +44,22 @@ class MainController extends Controller
 		$main = DB::table('room')->where('type', '=', $jenisKamar);
 		$booking = Booking::all();
 
-		@foreach($main as $room)
-			@foreach($booking as $book)
-				@if($book->id_kamar!=$room->id && $book->checkIn>$checkIn && $book->checkOut<$checkOut)
-				$bookingRoom= new Booking;
-				$bookingRoom->id_kamar=$main->$id;
-				$bookingRoom->checkIn=$checkIn;
-				$bookingRoom->checkOut=$checkOut;
-				$bookingRoom->namaDepan=$namaDepan;
-				$bookingRoom->namaBelakang=$namaBelakang;
-				$bookingRoom->email=$email;
-				$bookingRoom->no_telp=$noTelp;
-				$bookingRoom->ntt=$negaraAsal;
-				$bookingRoom->save();
-				return redirect('/');
-				@endif
-			@endforeach
-		@endforeach
+		// @foreach($main as $room)
+		// 	@foreach($booking as $book)
+		// 		@if($book->id_kamar!=$room->id && $book->checkIn>$checkIn && $book->checkOut<$checkOut)
+		// 		$bookingRoom= new Booking;
+		// 		$bookingRoom->id_kamar=$main->$id;
+		// 		$bookingRoom->checkIn=$checkIn;
+		// 		$bookingRoom->checkOut=$checkOut;
+		// 		$bookingRoom->namaDepan=$namaDepan;
+		// 		$bookingRoom->namaBelakang=$namaBelakang;
+		// 		$bookingRoom->email=$email;
+		// 		$bookingRoom->no_telp=$noTelp;
+		// 		$bookingRoom->ntt=$negaraAsal;
+		// 		$bookingRoom->save();
+		// 		return redirect('/');
+		// 		@endif
+		// 	@endforeach
+		// @endforeach
 	}
 }

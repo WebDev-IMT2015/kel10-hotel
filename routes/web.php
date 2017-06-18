@@ -26,6 +26,8 @@ Auth::routes();
 
 Route::get('main', 'MainController@index');
 
+Route::get('csList', 'MainController@indexCs');
+
 Route::get('registerUser','RegisterUserController@index');
 
 Route::post('registerUser','RegisterUserController@create');
@@ -39,6 +41,7 @@ Route::get('laporanBooking', 'MainController@indexLaporan');
 Route::get('booking', function () {
     return view('booking');
 });
+
 
 
 // Route::get('auth/register', [
