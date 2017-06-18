@@ -34,6 +34,11 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('laporanBooking', 'MainController@indexLaporan');
 
+Route::get('booking', function () {
+    return view('booking');
+});
+
+
 // Route::get('auth/register', [
 //   'as' => 'register', 
 //   'uses' => 'Auth\AuthController@getRegister'

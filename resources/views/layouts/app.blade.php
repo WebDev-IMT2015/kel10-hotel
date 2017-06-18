@@ -112,5 +112,13 @@
         modal.find('#wn').text("Warga Negara : "+wn)
     })
   </script>
+   <script>
+    $( function() {
+        $( "#datepickerOut" ).datepicker(
+        {
+            dateFormat: 'yy-mm-dd',
+        });
+    });
+  </script>
 </body>
 </html>
