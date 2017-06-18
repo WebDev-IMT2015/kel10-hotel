@@ -3,16 +3,6 @@
 @section('content')
 <div class="container"> 
     <div class="row text-center">
-        <br>
-        <div class="container-fluid">
-            <div class="row text-right">
-                <div class="col-md-9"></div>
-                <div class="col-md-3">
-                    <a href="{{ url('booking') }}" class="btn btn-primary" >Pesan Kamar</a>
-                </div>
-            </div>
-        </div>
-
         <form class="form-inline" method='GET' action='main'>
             <div class="form-group">
                 <div class='input-group date'>
@@ -37,6 +27,7 @@
             {{-- '2017-05-17' ambil dari value input date --}}
             @foreach($bookings as $booking)
                 @if(isset($_GET['date']))
+                    <?php $date = $_GET['date'];?>
                     @if($main->id == $booking->id_kamar && $booking->checkIn<=$_GET['date'] && $booking->checkOut>=$_GET['date'])
                         <?php $check='1'; $nama=$booking->namaDepan." ".$booking->namaBelakang; $email=$booking->email; $noTelp=$booking->no_telp; $wn=$booking->ntt; ?>
                     @endif
@@ -48,7 +39,7 @@
                 @endif
             @endforeach
             @if($check=='1')
-                <tr style="background-color: #e67e22;">
+                <tr style="background-color: #bdc3c7;">
             @else
                 <tr>
             @endif
@@ -56,9 +47,12 @@
                 <td>{{ $main->type }}</td>
                 <td>{{ $main->harga }}</td>
                 @if($check=='1')
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>">Detail Info</button></td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>">Detail Info</button>
+                    <button class="btn btn-warning">Print</button>
+                </td>
                 @else
-                <td><button class="btn btn-primary" disabled="disabled">Detail Info</button></td>
+                <td><a class="btn btn-primary" href="{{ url('booking') }}?id={{ $main->id }}&date=<?php echo $date; ?>">Booking Kamar</a></td>
                 @endif
             </tr>
             @endforeach
