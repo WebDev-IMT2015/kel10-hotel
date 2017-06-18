@@ -73,7 +73,7 @@
                 <h4 id="wn"></h4>
             </div>
             <div class="modal-footer">
-                <button type='button' class="btn btn-primary">Print</button>
+                <button type='button' class="btn btn-primary" onclick="myFunction()">Print</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

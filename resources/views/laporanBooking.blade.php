@@ -3,7 +3,6 @@
 @section('content')
 <div class="container"> 
     <div class="row text-center">
-    <p>Click the button to print the current page.</p>
 
 <button onclick="myFunction()">Print this page</button>
         <table class="table table-bordered table-hover">
