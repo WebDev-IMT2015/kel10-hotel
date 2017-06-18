@@ -144,5 +144,20 @@
         window.print();
     });
     </script>
+
+      <script type="text/javascript">
+        $(function(){
+            $('#printOut').click(function(e){
+                e.preventDefault();
+                var w = window.open();
+                var printOne = $('.contentToPrint1').html();
+                var printTwo = $('.contentToPrint2').html();
+                w.document.write('<html><head><title>Booking Room Detail</title></head><body><h1>Booking Room Detail</h1><h3 />' + printOne + '<hr />' + printTwo) + '</body></html>';
+                w.window.print();
+                w.document.close();
+                return false;
+            });
+        });
+     </script>
 </body>
 </html>
