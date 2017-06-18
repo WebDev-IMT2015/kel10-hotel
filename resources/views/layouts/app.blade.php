@@ -86,7 +86,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>=
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script>
@@ -99,10 +99,20 @@
 
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id')
         var nama = button.data('nama')
         var email = button.data('email')
         var no_telp = button.data('no_telp')
-        var wn = button.data('wn') // Extract info from data-* attributes
+        var wn = button.data('wn')
+        var noKamar = button.data('no_kamar')
+        var checkIn = button.data('check_in')
+        var checkOut = button.data('check_out')
+        var type = button.data('type')
+        var harga = button.data('harga')
+        var date1 = new Date(checkIn)
+        var date2 = new Date(checkOut)
+        var diff = date2 - date1
+        var lama = diff/1000/60/60/24 // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
@@ -110,6 +120,13 @@
         modal.find('#email').text("Email : "+email)
         modal.find('#noTelp').text("No Telp : "+no_telp)
         modal.find('#wn').text("Warga Negara : "+wn)
+        modal.find('#type').text("Tipe : "+type+" / Rp. "+harga)
+        modal.find('#checkIn').text("Check In : "+checkIn)
+        modal.find('#checkOut').text("Check Out : "+checkOut)
+        modal.find('#exampleModalLabel').text("Info Pemesanan Kamar "+noKamar)
+        modal.find('#lamaMenginap').text("Lama Menginap : "+lama+" hari")
+        modal.find('#harga').text("Total harga : Rp. "+lama*harga)
+        modal.find('#edit').html("<a class='btn btn-primary' href='{{ url('halamanPrint') }}?id="+id+"'>Print</a>")
     })
   </script>
    <script>

@@ -42,7 +42,7 @@ Route::get('booking', function () {
     return view('booking');
 });
 
-
+Route::get('halamanPrint', 'MainController@print');
 
 // Route::get('auth/register', [
 //   'as' => 'register', 

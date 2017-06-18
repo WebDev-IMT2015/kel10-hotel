@@ -30,6 +30,13 @@ class MainController extends Controller
     	return view('csList')->with('csList', $user);
     }
 
+    public function print()
+    {
+    	$main = Main::all();
+    	$booking = Booking::all();
+    	return view('halamanPrint')->with('mains', $main)->with('bookings', $booking);
+    }
+
   	public function create(Request $request)
 	{
 		$id_kamar = $request->input('id_kamar');
