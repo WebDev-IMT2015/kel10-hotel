@@ -60,6 +60,24 @@
                             </div>
                         </div>
 
+                                <div class='input-group date' id='datePicker'>
+                                <label for="checkIn" class="col-md-4 control-label">Check in</label>
+                                    <input name='checkIn' type='text' class="form-control" id="datepicker" value="<?php if(!isset($_GET['date']))echo date('Y-m-d'); else echo $_GET['date']; ?>" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                                
+                       
+
+                                <div class='input-group date' id='datePicker'>
+                                <label for="checkOUt" class="col-md-4 control-label">Check Out</label>
+                                    <input name='checkOUt' type='text' class="form-control" id="datepicker" value="<?php if(!isset($_GET['date']))echo date('Y-m-d'); else echo $_GET['date']; ?>" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

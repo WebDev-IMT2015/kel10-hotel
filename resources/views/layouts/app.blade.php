@@ -97,5 +97,13 @@
         });
     });
   </script>
+   <script>
+    $( function() {
+        $( "#datepickerOut" ).datepicker(
+        {
+            dateFormat: 'yy-mm-dd',
+        });
+    });
+  </script>
 </body>
 </html>

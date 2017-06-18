@@ -8,7 +8,7 @@
             <div class="row text-right">
                 <div class="col-md-9"></div>
                 <div class="col-md-3">
-                    <button class="btn btn-primary">Pesan Kamar</button>
+                    <a href="{{ url('booking') }}" class="btn btn-primary" >Pesan Kamar</a>
                 </div>
             </div>
         </div>
