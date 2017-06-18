@@ -120,5 +120,11 @@
         });
     });
   </script>
+
+  <script>
+function myFunction() {
+    window.print();
+}
+</script>
 </body>
 </html>
