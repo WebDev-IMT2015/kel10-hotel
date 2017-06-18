@@ -126,7 +126,7 @@
         modal.find('#exampleModalLabel').text("Info Pemesanan Kamar "+noKamar)
         modal.find('#lamaMenginap').text("Lama Menginap : "+lama+" hari")
         modal.find('#harga').text("Total harga : Rp. "+lama*harga)
-        modal.find('#edit').html("<a class='btn btn-primary' href='{{ url('halamanPrint') }}?id="+id+"'>Print</a>")
+        // modal.find('#edit').html("<a class='btn btn-primary' href='{{ url('halamanPrint') }}?id="+id+"'>Print</a>")
     })
   </script>
    <script>
