@@ -123,8 +123,8 @@
 
     <script>
     $('#print').click(function(){
-        window.print();
         $('#print').hide();
+        window.print();
     });
     </script>
 </body>
