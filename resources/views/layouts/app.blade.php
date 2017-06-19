@@ -53,8 +53,6 @@
                             @if(Auth::user()->authentication == 1)
                                 <li><a href="{{ url('csList') }}">Manage CS</a></li>
                                 <li><a href="{{ url('laporanBooking') }}">Laporan Booking</a></li>
-                            @else
-                                <li><a href="">Booking Kamar</a></li>
                             @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
