@@ -28,13 +28,17 @@
 
                             </thead>
                             <tbody>
+                            <?php $i=0; ?>
                              @foreach($csList as $list)
                              {{ csrf_field() }}
+                              @if($list->authentication==0)
+                              <?php $i++; ?>
                               <tr>
-                                <th>{{$list->id}}</th>
+                                <th><?php echo $i;?></th>
                                 <th>{{$list->name}}</th>
                                 <th>{{$list->username}}</th>
                               </tr>
+                              @endif
                               @endforeach
                             </tbody>
                           </table>
