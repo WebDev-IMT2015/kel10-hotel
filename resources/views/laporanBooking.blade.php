@@ -3,8 +3,6 @@
 @section('content')
 <div class="container"> 
     <div class="row text-center">
-
-<button id="print">Print this page</button>
         <table class="table table-bordered table-hover">
             <tr>
                 <th class="text-center">No Kamar</th>

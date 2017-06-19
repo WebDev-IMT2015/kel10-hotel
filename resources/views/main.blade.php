@@ -64,9 +64,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 class="modal-title" id="exampleModalLabel">Info Pemesan</h2>
+                <h2 class="modal-title contentToPrint1" id="exampleModalLabel">Info Pemesan</h2>
             </div>
-            <div class="modal-body">
+            <div class="modal-body contentToPrint2">
                 <h4 id="nama">Nama Pemesan : </h4>
                 <h4 id="email">Email : </h4>
                 <h4 id="noTelp">No Telp : </h4>
@@ -79,7 +79,7 @@
             </div>
             <div class="modal-footer">
                 <a href="" class="btn btn-warning">Edit</a>
-                <a id="edit"></a>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="printOut">Print</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
