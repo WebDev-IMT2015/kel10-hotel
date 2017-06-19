@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Auth::guest())
+<?php redirect('login'); ?>
+@else
 <div class="container"> 
     <div class="row text-center">
         <form class="form-inline" method='GET' action='main'>
@@ -85,4 +88,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
