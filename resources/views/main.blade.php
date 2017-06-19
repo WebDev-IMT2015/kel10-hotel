@@ -78,6 +78,7 @@
                 <h4 id="harga">Total harga : Rp. </h4>
             </div>
             <div class="modal-footer">
+                <a href="" class="btn btn-warning">Edit</a>
                 <a id="edit"></a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
