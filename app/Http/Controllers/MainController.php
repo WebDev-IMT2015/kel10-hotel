@@ -61,4 +61,13 @@ class MainController extends Controller
 		$bookingRoom->save();
 		return redirect('/');
 	}
+
+    public function update(Request $request)
+    {
+        $id = $request->input('id');
+        $booking = Booking::find($id);
+        $booking->checkOut = $request->input('checkOut');
+        $booking->save();
+        return redirect('main');
+    }
 }

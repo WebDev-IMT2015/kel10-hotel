@@ -48,6 +48,7 @@
                     @if($check=='1') 
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?php echo $id;?>" data-nama="<?php echo $nama;?>" data-email="<?php echo $email;?>" data-no_telp="<?php echo $noTelp;?>" data-wn="<?php echo $wn;?>" data-check_in="<?php echo $checkIn;?>" data-check_out="<?php echo $checkOut;?>" data-no_kamar="<?php echo $noKamar;?>" data-type="<?php echo $type;?>" data-harga="<?php echo $harga;?>">Detail Info</button>
+                        <a href="{{ url('editBooking') }}?id=<?php echo $id;?>&date=<?php echo $checkOut;?>" class="btn btn-warning">Edit</a>
                     </td>
                     @else
                     <td><a class="btn btn-primary" href="{{ url('booking') }}?id={{ $main->id }}&date=<?php echo $date; ?>">Booking Kamar</a></td>
@@ -78,7 +79,6 @@
                 <h4 id="harga">Total harga : Rp. </h4>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-warning">Edit</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal" id="printOut">Print</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>

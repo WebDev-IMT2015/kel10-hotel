@@ -4,19 +4,19 @@
 <div class="container">
     <div class="row">
         <div class="panel panel-default">
-            <div class="panel-heading">Booking Room</div>
+            <div class="panel-heading">Edit Booking Room</div>
             <div class="panel-body">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('main/edit') }}">
                     {{ csrf_field() }}
                     
-                    <input type="hidden" name="id_kamar" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 
                     <div class="form-group{{ $errors->has('chekOut') ? ' has-error' : '' }}">
                         <label for="datepickerOut" class="col-md-4 control-label">Check Out</label>
 
                         <div class="col-md-6">
                             <div class=input-group>
-                                <input name='checkOut' type='text' class="form-control" id="datepickerOut" value="<?php $_GET['date']; ?>" required />
+                                <input name='checkOut' type='text' class="form-control" id="datepickerOut" value="<?php echo $_GET['date']; ?>" required />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>

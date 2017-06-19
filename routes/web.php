@@ -44,6 +44,12 @@ Route::get('booking', function () {
 
 Route::get('halamanPrint', 'MainController@print');
 
+Route::get('editBooking', function () {
+    return view('editBooking');
+});
+
+Route::post('main/edit','MainController@update');
+
 // Route::get('auth/register', [
 //   'as' => 'register', 
 //   'uses' => 'Auth\AuthController@getRegister'
