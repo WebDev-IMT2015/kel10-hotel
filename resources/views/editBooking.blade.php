@@ -10,10 +10,8 @@
                     {{ csrf_field() }}
                     
                     <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-
                     <div class="form-group{{ $errors->has('chekOut') ? ' has-error' : '' }}">
                         <label for="datepickerOut" class="col-md-4 control-label">Check Out</label>
-
                         <div class="col-md-6">
                             <div class=input-group>
                                 <input name='checkOut' type='text' class="form-control" id="datepickerOut" value="<?php echo $_GET['date']; ?>" required />
