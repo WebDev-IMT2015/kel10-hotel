@@ -55,7 +55,7 @@
                         <label for="noTelp" class="col-md-4 control-label">No. Telephone</label>
 
                         <div class="col-md-6">
-                            <input id="noTelp" type="text" class="form-control" name="noTelp" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                            <input id="noTelp" type="text" class="form-control" name="noTelp" minlength="10" maxlength="13" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 
                             @if ($errors->has('noTelp'))
                                 <span class="help-block">
